@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Atividade 6</title>
+</head>
+<body>
+	<h1>Exercícios com HTML5</h1>
+	<h3>Cadastro de clientes</h3>
+      <form action="/clientes.php" method="post">
+      	<label for="name">Nome:</label><br>
+      	<input type="text" id="name" name="name" value="" maxlength="30" placeholder="Digite seu nome" required><br>
+      	<label for="adress">Endereço:</label><br>
+      	<input type="text" id="adress" name="adress" value="" size="50" maxlength="50" placeholder="Digite seu endereço" required><br>
+      	<label for="email">E-mail:</label><br>
+      	<input type="email" id="email" name="email" value="" placeholder="Digite seu E-mail" required><br>
+      	<input type="checkbox" id="newsletter" name="newsletter" value="newsletter" required>
+        <label for="newsletter"> Desejo receber newsletter</label><br>
+        <button type="submit" value="submit">Cadastrar</button>
+        <button type="reset" value="reset">Cancelar</button>
+    </form>
+</body>
+</html>
