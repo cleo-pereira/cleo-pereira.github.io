@@ -4,8 +4,45 @@ main {
    border: 5px;
    margin: 10px;
    margin-left: 400px;
+   margin-top: 75px;
    background-color: lightgray;
    border: dotted #000;
+}
+
+.menu{
+   background-color: rgb(119, 217, 255);
+   position: fixed;
+   width:500px;
+   top: 0;
+   z-index: 1;
+   margin-left: 413px;
+ }
+
+ .menu ul {
+   display: flex;
+   justify-content: center;
+ }
+ 
+.menu li {
+  list-style: none;
+}
+.menu a{
+ color: black;
+}
+
+.menu button{
+ background-color: rgb(187, 224, 255);
+ border-radius: 50%;
+}
+
+.menu a {
+   display: block;
+   padding: 5px 5px;
+   transition: background-color 1s, color 1s;
+}
+
+a {
+ text-decoration: none;
 }
 
 body {
