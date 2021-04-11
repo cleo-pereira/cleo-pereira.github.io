@@ -48,7 +48,7 @@ h3{
 }
 
 .menu{
-  background-color: darkred;
+  background-color:#d3d3d3;
   position: fixed;
   width:1000px;
   top: 0;
@@ -67,8 +67,8 @@ h3{
 }
 
 .menu button{
-  background-color: rgb(218, 47, 84);
-  border-radius: 50%;
+  background-color: rgb(231, 108, 60);
+  border-radius: 20px;
 }
 
 .menu a {
@@ -89,6 +89,7 @@ a {
 .nomepagina{
   display: flex;
   padding: 5em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .festival div{
