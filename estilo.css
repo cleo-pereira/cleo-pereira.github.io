@@ -20,7 +20,7 @@ main {
 
  .menu ul {
    display: flex;
-   justify-content: center;
+   justify-content: space-around;
  }
  
 .menu li {
