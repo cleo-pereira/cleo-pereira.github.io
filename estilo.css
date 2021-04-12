@@ -4,6 +4,7 @@ main {
    border: 5px;
    margin: 10px;
    margin-left: 400px;
+   margin-right: 400px;
    margin-top: 75px;
    background-color: rgb(236, 233, 233);
    border: dotted #000;
