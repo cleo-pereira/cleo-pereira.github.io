@@ -49,6 +49,7 @@ body {
    background-image: 
 url("parede.jpg");
    background-color: #fff;
+   align-content: center;
 }
 
 h2 {
