@@ -1,0 +1,54 @@
+body{
+	font-size: 80%;
+	background-color: white;
+	margin: 10px;
+	border-color: black;
+	border-width: 4px;
+	border-style: solid;
+	max-width: 940px;
+	min-width: 720px;
+	line-height: 20px;
+}
+
+header{
+	background-color: lightgray;
+	text-align: center;
+	width: 600px;
+	margin: 20px;
+	border-radius: 10px;
+}
+
+footer{
+	background-color: lightgray;
+	border-radius: 10px;
+	text-align: center;
+	margin: 20px;
+}
+
+nav{
+	background-color: white;
+}
+
+a:hover{
+	color: red;
+	font-size: 20px;
+}
+
+li{
+	display: inline;
+	padding: 2em;
+}
+
+section{
+	text-align: center;
+	width: 600px;
+	margin: 20px;
+}
+
+img{
+	display: inline;
+}
+
+h3{
+	text-align: left;
+}

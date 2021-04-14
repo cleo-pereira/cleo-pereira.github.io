@@ -26,9 +26,15 @@ main {
  
 .menu li {
   list-style: none;
+  display: inline;
 }
 .menu a{
  color: black;
+}
+
+a:hover{
+   font-size: 20px;
+   color: blueviolet;
 }
 
 .menu button{
