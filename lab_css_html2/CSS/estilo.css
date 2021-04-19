@@ -23,10 +23,14 @@ footer{
 	border-radius: 10px;
 	text-align: center;
 	margin: 20px;
+	width: 600px;
 }
 
 nav{
 	background-color: white;
+	border-width: 2px;
+	border-bottom: black;
+	border-top: black;
 }
 
 a:hover{
@@ -47,9 +51,7 @@ section{
 
 img{
 	display: inline;
-	padding: 2em;
-}
-
-h3{
-	text-align: left;
+	padding: 1em;
+	border-color: white;
+	border-radius: 35px;
 }
