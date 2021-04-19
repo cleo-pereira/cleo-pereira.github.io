@@ -29,8 +29,8 @@ footer{
 nav{
 	background-color: white;
 	border-width: 2px;
-	border-bottom: black;
-	border-top: black;
+	border-bottom-color: black;
+	border-top-color: black;
 }
 
 a:hover{
