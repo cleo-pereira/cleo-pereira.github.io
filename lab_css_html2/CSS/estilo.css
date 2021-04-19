@@ -2,9 +2,11 @@ body{
 	font-size: 80%;
 	background-color: white;
 	margin: 10px;
+	margin-left: 200px;
 	border-color: black;
 	border-width: 4px;
 	border-style: solid;
+	border-radius: 45px;
 	max-width: 940px;
 	min-width: 720px;
 	line-height: 20px;
@@ -16,6 +18,7 @@ header{
 	width: 600px;
 	margin: 20px;
 	border-radius: 10px;
+	margin-left: 150px;
 }
 
 footer{
@@ -24,13 +27,17 @@ footer{
 	text-align: center;
 	margin: 20px;
 	width: 600px;
+	margin-left: 150px;
 }
 
 nav{
 	background-color: white;
+	border-style: solid;
 	border-width: 2px;
 	border-bottom-color: black;
 	border-top-color: black;
+	border-left-color: white;
+	border-right-color: white;
 }
 
 a:hover{
@@ -47,6 +54,7 @@ section{
 	text-align: center;
 	width: 600px;
 	margin: 20px;
+	margin-left: 150px;
 }
 
 img{
