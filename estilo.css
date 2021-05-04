@@ -74,10 +74,11 @@ img {
 }
 
 footer{
-	background-color: rgb(187, 224, 255);
+	background-color: black;
+   color: white;
 	border-radius: 10px;
 	text-align: center;
 	margin: 20px;
 	width: 400px;
-	margin-left: 50px;
+	margin-left: 465px;
 }
