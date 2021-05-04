@@ -72,3 +72,12 @@ img {
   margin-right: auto;
   width: 40%;
 }
+
+footer{
+	background-color: rgb(187, 224, 255);
+	border-radius: 10px;
+	text-align: center;
+	margin: 20px;
+	width: 400px;
+	margin-left: 50px;
+}
