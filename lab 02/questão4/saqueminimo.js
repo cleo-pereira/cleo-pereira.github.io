@@ -1,40 +1,52 @@
+let cofre = [100, 50, 20, 10, 5, 2];
+let total = 0;
 function saqueminimo (valor){
-    var cedulas, resto;
-        if (valor >= 100){
-            cedulas = Math.floor(valor/100);
-            console.log("100: ", cedulas);
-            resto = valor % 100;
-
-            if(resto >= 50){
-                cedulas = Math.floor(resto/50);
-                console.log("50:  ", cedulas)
-                resto = resto % 50;
-
-                if(resto >= 20){
-                    cedulas = Math.floor(resto/20);
-                    console.log("20:  ", cedulas); 
-                    resto = resto % 20;
-
-                    if(resto >= 10){
-                        cedulas = Math.floor(resto/10);
-                        console.log("10:  ", cedulas);  
-                        resto = resto % 10;
-                            
-                        if(resto >= 5){
-                            cedulas = Math.floor(resto/5);
-                            console.log("5:   ", cedulas);  
-                            resto = resto % 5;
-
-                            if(resto >= 2){
-                                cedulas = Math.floor(resto/2);
-                                console.log("2:   ", cedulas);                                     
-                            }
-                        }
-                    }
-                }
-            }
- 
+    if (cofre[0] <= valor){
+        while(cofre[0] < n){
+            n = n - cofre[0]
+            total ++
         }
+        console.log(total)
     }
-
+    total = 0;
+    if (cofre[1] <= valor){
+        while(cofre[1] < n){
+            n = n - cofre[1]
+            total ++
+        }
+        console.log(total)
+    }
+    total = 0;
+    if (cofre[2] <= valor){
+        while(cofre[2] < n){
+            n = n - cofre[2]
+            total ++
+        }
+        console.log(total)
+    }    
+    total = 0;
+    if (cofre[3] <= valor){
+        while(cofre[3] < n){
+            n = n - cofre[3]
+            total ++
+        }
+        console.log(total)
+    }
+    total = 0;
+    if (cofre[4] <= valor){
+        while(cofre[4] < n){
+            n = n - cofre[4]
+            total ++
+        }
+        console.log(total)
+    } 
+    total = 0;
+    if (cofre[5] <= valor){
+        while(cofre[5] < n){
+            n = n - cofre[5]
+            total ++
+        }
+        console.log(total)
+    } 
+}
 saqueminimo(600);
