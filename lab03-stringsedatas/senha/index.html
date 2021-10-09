@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Senha</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/estilo.css" media="screen"/>
+<script>
+        var min=/[a-z]/;
+        var mai=/[A-Z]/;
+        var num=/[1-9]/;
+        var especiais=/[@#!$%&*()-+.,=]/;
+        $(function () {
+
+            $("#texto").keyup(function () {
+                if ($("#texto").val() == "") {
+                    $("#tx").text("");
+                    $("#tx").css('color', 'black');
+                }
+            })
+
+            $("#senha").click(function () {
+                let texto= $("#texto").val();
+                let resultado="";
+                if ($("#texto").val() == "") {
+                    $("#tx").text("Insira uma senha");
+                    $("#tx").css('color', 'black');
+                }
+                if (min.test(texto) || mai.test(texto)) {
+                    $("#tx").text("Senha fraca");
+                    $("#tx").css('color', 'red');
+                }
+                if (min.test(texto) && mai.test(texto) && num.test(texto)) {
+                    $("#tx").text("Senha média");
+                    $("#tx").css('color', 'orange');
+                }
+
+                if (min.test(texto) && mai.test(texto) && num.test(texto) && especiais.test(texto)) {
+                    $("#tx").text("Senha forte");
+                    $("#tx").css('color', 'green');
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>Mede o nível de segurança de uma senha.</p>
+    <input type="password" id="texto">
+    <button id="senha">Verificar</button>
+	<p id="tx"></p>
+</body>
+</html>

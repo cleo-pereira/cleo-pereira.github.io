@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Substitui</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/estilo.css" media="screen"/>
+<script>
+    $(function () {
+        $("#dados").click(function () 
+        {
+            if ($("#texto").val() != "") {
+                let procura=$("#frase").val();
+                let substitui=$("#frase2").val();
+                let texto = $("#texto").val();
+                let array=texto.split(" ");
+                for (i = 0; i < array.length; i++) {
+                    if (array[i] == procura) {
+                        array[i] = substitui;
+                    }
+                }
+                let test = ""
+                test = array.join(" ");
+                $("#texto1").text(test);
+                $("#frase").val("");
+                $("#frase2").val("");
+                $("#texto").val("");
+            }
+
+            else {
+                $("#texto1").text("Digite um texto válido");
+            }
+        })
+    })
+</script>
+</head>
+<body>
+<p>Procura e substitui palavras no texto</p>
+<input type="text" id="texto" placeholder="Texto" class="maior">
+<input type="text" id="frase" placeholder="Procurar palavra">
+<input type="text" id="frase2" placeholder="Substituir por">
+<button id="dados">Substituir palavra</button>
+<p id="texto1"></p>
+</body>
+</html>

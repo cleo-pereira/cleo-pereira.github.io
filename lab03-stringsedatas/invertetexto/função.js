@@ -5,9 +5,9 @@ window.onload= function(){
 };
 
 function inverteOpostos(){
-    var inv= document.getElementById("texto").value
-    , resultado= document.getElementById("resultado")
-    , parte1, parte2;
+    var inv= document.getElementById("texto").value,
+      resultado= document.getElementById("resultado"),
+      parte1, parte2;
     parte1 = inv.split("");
     parte2= parte1.reverse()
     resultado.textContent = parte2;

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Separa e conta palavras</title>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css" media="screen"/>
+    <script>
+        function ocorrencia(obj, pal) 
+    {
+            return obj.filter((v) => (v===pal)).length;
+        }
+        $(function () 
+          {
+            $("#limpar").click(function () {
+                $("#tabela").empty();
+                $("#texto").val("");
+            })
+    
+            $("#array").click(function () {
+                $("#tabela").empty();
+                let texto= $("#texto").val();
+                var palavras=texto.split(" ").map(function (pal) {
+                    return pal.toLocaleLowerCase();
+                });
+                var i = 0;
+                var array = [];
+                var teste = [];
+                var x = 0;
+                for (pal of palavras) {
+                    if (teste.indexOf(pal) == -1) {
+                        let ocorren = (ocorrencia(palavras, pal));
+                        teste.push(pal);
+                        array[x] =ocorren;
+                    }
+                    else
+                        x--;
+                    i++; x++;
+                }
+                for (i = 0; i < teste.length; i++) {
+                    let tr = $("<tr>");
+                    $("#tabela").append(tr);
+                    let td = $("<td>");
+                    let td2 = $("<td>");
+                    td.text(teste[i]);
+                    td2.text(array[i]);
+                    tr.append(td);
+                    tr.append(td2);
+                };
+            });
+        });
+    </script>
+    </head>
+    <body>
+    <p>Separa a frase e conta a ocorrência de cada palavra</p>
+    <input type="text" id="texto">
+    <button id="array">Ver ocorrências da palavra.</button>
+    <p id="texto1"></p>
+    <table id="tabela"></table>
+    <br><br>
+    <button id="limpar">Limpar</button>
+    </body>
+</html>

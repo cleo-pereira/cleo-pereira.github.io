@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Palavra que mais repete</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css" media="screen"/>
+    <script>
+        function ocorrencias(palavras, palavra) 
+        {
+            return palavras.filter((v) => (v === palavra)).length;
+        }
+        $(function () {
+            $("#limpeza").click(function () {
+                $("#texto").val("");
+                $("#texto1").text("");
+            })
+            $("#array").click(function () {
+                let texto = $("#texto").val();
+                var palavras = texto.split(" ").map(function (palavra) {
+                    return palavra.toLocaleLowerCase();
+                });
+                var array = new Array;
+                var i = 0;
+                var x = 0;
+                var y= [];
+                for (palavra of palavras) {
+                    if (y.indexOf(palavra) == -1) {
+                        let oco = ocorrencias(palavras, palavra);
+                        y.push(palavra);
+                        array[x] = oco;
+                    }
+                    else {
+                        x--;
+                    }
+                    i++;
+                    x++;
+                }
+                var empate = [];
+                var maior;
+                var conta = 0;
+                for (i = 0; i < foio.length; i++) {
+                    var num = Math.max.apply(null, array);
+                    if (array[i] == num) {
+                        cont++;
+                        maior = y[i];
+                        empate[i] = y[i];
+                    }
+                }
+                if (cont> 1) {
+                    $("#texto1").text(empate+ ": Essas palavras aparecem" + array[0] + "vezes no texto.");
+                }
+                else {
+                    $("#texto1").text("A palavra " + maior +  "apereceu mais vezes no texto: " + num + " vezes.");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>Conta a palavra que mais se repete no texto</p>
+    <input type="text" id="texto" placeholder="Texto" class="num">
+    <br><br>
+    <button id="array">Ver qual palavra repete mais no texto</button>
+    <p id="texto1"></p>
+    <br><br>
+    <button id="limpeza">Limpar</button>
+</body>
+</html>

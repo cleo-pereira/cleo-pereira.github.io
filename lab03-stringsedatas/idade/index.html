@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dias de vida</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/estilo.css" media="screen"/>
+ <script>
+      $(function () {
+            $("#data").click(function () {
+                let texto = $("#texto").val();
+                if (texto!= "") {
+                    let dia= texto.substr(8, 2);
+                    let ano = texto.substr(0, 4);
+                    let mes = texto.substr(5, 2);
+                    const hoje= new Date();
+                    const nasc= new Date(ano, mes - 1, dia);
+                    const result = Math.abs(hoje.getTime() - nasc.getTime());
+                    const dias = Math.ceil(result / (1000 * 60 * 60 * 24));
+                    $("#texto1").text("Você tem " + dias + " dias de vida.");
+                    $("#texto").val("");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>Conta quantos dias de vida a pessoa tem.</p>
+    <input type="date" id="texto">
+    <button id="data">Ver quantos dias você viveu até hoje</button>
+    <p id="texto1"></p>
+</body>
+</html>

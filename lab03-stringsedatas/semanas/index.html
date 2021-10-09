@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semanas entre duas datas</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css" media="screen"/>
+    <script>
+        $(function () {
+            $("#data").click(function () {
+                let tx= $("#tx").val();
+                let tx2= $("#tx2").val();
+                if (tx == "" || tx2 == 0) {
+                    $("#texto").text("Insira uma data válida")
+
+                }
+                else {
+                    let dia = tx.substr(8, 2);
+                    let ano = tx.substr(0, 4);
+                    let mes = tx.substr(5, 2);
+                    let dia2 = tx2.substr(8, 2);
+                    let ano2 = tx2.substr(0, 4);
+                    let mes2 = tx2.substr(5, 2);
+                    const a= new Date(ano, mes - 1, dia);
+                    const b = new Date(ano2, mes2 - 1, dia2);
+                    const c = Math.abs(a.getTime() - b.getTime());
+                    const d = Math.ceil(c / (1000 * 60 * 60 * 24 * 7));
+                    $("#texto").text("Há " + d + " semanas " + "entre " + dia + "/" + mes + "/" + ano + " e " + dia2 + "/" + mes2 + "/" + ano2)
+                    $("#tx").val("");
+                    $("#tx2").val("");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>Distância, em semanas, entre duas datas</p>
+    <input type="date" id="tx">
+    <input type="date" id="tx2">
+    <button id="data">executar</button>
+    <p id="texto"></p>
+</body>
+</html>

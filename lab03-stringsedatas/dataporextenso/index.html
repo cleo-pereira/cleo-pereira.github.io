@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data por extenso</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/estilo.css" media="screen"/>
+<script>
+    $(function () 
+    {
+        $("#data").click(function () {
+            let texto= $("#texto").val();
+            if (texto!= "") {
+                let dia= texto.substr(8, 2);
+                let ano= texto.substr(0, 4);
+                let mes= texto.substr(5, 2);
+                var m= ""
+                switch (mes) {
+                    case '01':
+                        m = "janeiro"
+                        break;
+                    case '02':
+                        m = "fevereiro"
+                        break;
+                    case '03':
+                        m = "março"
+                        break;
+                    case '04':
+                        m = "abril"
+                        break;
+                    case '05':
+                        m = "maio"
+                        break;
+                    case '06':
+                        m = "junho"
+                        break;
+                    case '07':
+                        m = "julho"
+                        break;
+                    case '08':
+                        m = "agosto"
+                        break;
+                    case '09':
+                        m = "setembro"
+                        break;
+                    case '10':
+                        m = "outubro"
+                        break;
+                    case '11':
+                        m = "novembro"
+                        break;
+                    case '12':
+                        m = "dezembro"
+                        break;
+                }
+                $("#texto").val("");
+                $("#texto1").text(dia + " de " + m + " de " + ano);
+            }
+        })
+    })
+</script>
+</head>
+<body>
+<p>Escreve a data por extenso.</p>
+<input type="date" id="texto">
+<button id="data">Ver data por extenso</button>
+<p id="texto1"></p>
+</body>
+</html>
