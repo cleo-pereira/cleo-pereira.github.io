@@ -26,6 +26,12 @@ h3{
     text-align: center;
 }
 
+.rating{
+    width: 50%;
+    display: flex;
+    
+}
+
 div{
     border-bottom: 5px;
     border-bottom: solid #000;
