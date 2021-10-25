@@ -4,7 +4,7 @@ http.get('https://rafaelescalfoni.github.io/desenv_web/filmes.json', function(st
         console.log(status);
     } else {
 
-        let aux = '';
+        let Texto = '';
         let ages = [];
 
         const star = document.createElement("img");
@@ -14,23 +14,23 @@ http.get('https://rafaelescalfoni.github.io/desenv_web/filmes.json', function(st
 
         response.forEach(data => {
             const showRating = document.createElement("div");
-            let castAux = '<h3>Elenco</h3>';
-            let generosAux = '<h3>Gênero</h3>';
-            let similarAux = '<h3>Similares</h3>';
-            let opinioesAux = '';
+            let castTexto = '<h3>Elenco</h3>';
+            let generosTexto = '<h3>Gênero</h3>';
+            let similarTexto = '<h3>Similares</h3>';
+            let opinioesTexto = '';
             let media = 0;
 
             function eachForLoops() 
                 {data.elenco.forEach(cast => {
                     const li = document.createElement("li");
                     li.appendChild(document.createTextNode(cast));
-                    castAux += li.outerHTML;
+                    castTexto += li.outerHTML;
                 });
 
                 data.generos.forEach(genre => {
                     const li = document.createElement("li");
                     li.appendChild(document.createTextNode(genre));
-                    generosAux += li.outerHTML;
+                    generosTexto += li.outerHTML;
                 });
 
                 data.opinioes.forEach((opinion, k) => {
@@ -43,7 +43,7 @@ http.get('https://rafaelescalfoni.github.io/desenv_web/filmes.json', function(st
                     }
                     media = (media + opinion.rating)/(k + 1);
                     span.appendChild(starDiv);
-                    opinioesAux += span.outerHTML;
+                    opinioesTexto += span.outerHTML;
                 });
 
                 data.titulosSemelhantes.forEach((similar, k) => {
@@ -51,7 +51,7 @@ http.get('https://rafaelescalfoni.github.io/desenv_web/filmes.json', function(st
                         if(test.id == similar) {
                             const li = document.createElement("li");
                             li.appendChild(document.createTextNode(test.titulo));
-                            similarAux += li.outerHTML;
+                            similarTexto += li.outerHTML;
                         }
                     });
                 });
@@ -66,7 +66,7 @@ http.get('https://rafaelescalfoni.github.io/desenv_web/filmes.json', function(st
                 }
             } eachForLoops();
 
-            aux += `<div class="card">
+            Texto += `<div class="card">
             <div class="movie">
                 <div class="imageContainer">
                     <img src=${data.figura}>
@@ -81,28 +81,28 @@ http.get('https://rafaelescalfoni.github.io/desenv_web/filmes.json', function(st
                 <div class="showInfo">
                 <div class="cast">
                     <ul>
-                        ${castAux}
+                        ${castTexto}
                     </ul>
                 </div>
                 <div class="similar">
                     <ul>
-                        ${similarAux}
+                        ${similarTexto}
                     </ul>
                 </div>
                 <div class ="genrers">
                     <ul>
-                        ${generosAux}
+                        ${generosTexto}
                     </ul>
                 </div>
                 <div class="reviews">
-                ${opinioesAux}
+                ${opinioesTexto}
                 </div>
             </div>
             </div>
             </div>
         </div>`; 
 
-        document.querySelector('.movies').innerHTML = aux;
+        document.querySelector('.movies').innerHTML = Texto;
 
         ages.push(data.classificacao);
         });
