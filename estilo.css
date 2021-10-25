@@ -7,7 +7,8 @@ main {
    margin-right: 400px;
    margin-top: 75px;
    background-color: rgb(236, 233, 233);
-   border: dotted #000;
+   border: dotted;
+   border-color: #000;
 }
 
 .menu{
@@ -27,12 +28,13 @@ main {
   list-style: none;
   display: inline;
 }
+
 .menu a{
  color: black;
 }
 
 a:hover{
-   color: red;
+   color: darkred;
 }
 
 .menu button{
