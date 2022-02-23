@@ -5,17 +5,20 @@ const KEY_LOAD_PEDIDO = "restaurante-do-china:loaded";
 class Pedido {
     constructor() {
         this.listaProdutos = [];
-        this.total = 0;
+         this.total = 0;
     }
+
 
     addProduto(item) {
         this.listaProdutos.push(item);
         this.total += item.price;
+
         this.load();
-    }
+    };
+
 
     removeProduto(item) {
-        let index = this.listaProdutos.map(function(e) { return e.code }).indexOf(item.code);
+        let index = this.listaProdutos.indexOf(item);
         this.listaProdutos.splice(index,1);
         this.total -= item.price;
 

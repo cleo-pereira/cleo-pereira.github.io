@@ -22,30 +22,27 @@ let pedido = new Pedido();
 let view = new IndexView("#main-content");
 
 let mainContent = document.querySelector("#main-content");
+let navContent = document.querySelector("#collapsable-nav");
 
 window.onload = () => {    
     view.loadMain();
     pedido.readFromStorage();
 }
 
+navContent.addEventListener('click', (event)=>{
+    console.log(event);
+    if(event.target.matches("#linkmenu") || event.target.matches("#spanmenu")){
+        loadMenuCategories();
+    }
+});
+
+
+
 /**
  * Declaração dos eventos previstos na área principal
  */
-
-document.querySelector('header').addEventListener('click', event => {
-    if(event.target.matches("#navMenuButton")) {
-        //carregar todas as categorias
-        loadMenuCategories();
-    }
-
-    if(event.target.matches("#navPedidosButton")) {
-        //carregar todas as categorias
-        view.createCarrinho(pedido)
-
-    }
-})
-
 mainContent.addEventListener('click', (event) => {
+    // console.log(event);
     /* 
       programando o evento de clique no card de menu categoria
     */
@@ -65,13 +62,14 @@ mainContent.addEventListener('click', (event) => {
         }
     }
 
+
     /**
      * programando o evento de escolha de um prato
      */
     if(event.target.matches("button.pedir")){
         let selectedItem = items.getItem(event.target.id); 
         pedido.addProduto(selectedItem);
-        view.sucess(pedido);
+        view.listPedido(pedido);
     }
 
 
@@ -81,16 +79,36 @@ mainContent.addEventListener('click', (event) => {
  ***  a. escolha ou crie um evento para remover um item do pedido
 */
     if(event.target.matches("button.excluir")){
-        //i. identifique o item a ser removido
-        let selectedItem = items.getItem(event.target.id)
-        //ii. chame o método de remoção no objeto pedido
-        pedido.removeProduto(selectedItem)
-        //iii. atualize a view
-        view.listPedido(pedido)
-        view.removed()
-    }   
+        let selectedItem = items.getItem(event.target.id); 
+        pedido.removeProduto(selectedItem);
+        view.listPedido(pedido);
+    }
+
+    mostraEsconde();
     
-})
+});
+
+function mostraEsconde(){
+    let mostrarpedido = document.querySelector("#pedidoList");
+    let btnEsconde = document.querySelector("#btnEsconde");
+    let btnmostra = document.querySelector("#btnMostra");
+
+    if(event.target.matches("button.mostrar") || event.target.matches("button.excluir")){
+        mostrarpedido.style.display= 'block';
+        btnEsconde.style.display= 'block';
+        btnmostra.style.display= 'none';
+
+     }else{
+        if(event.target.matches("button.esconder")){
+            mostrarpedido.style.display= 'none';
+            btnEsconde.style.display= 'none';
+            btnmostra.style.display= 'block';
+
+        }
+        
+    }
+}
+
 
 /*
  * Funções auxiliares
@@ -106,6 +124,7 @@ function loadMenuCategories(){
 function loadMenuItems(shortName){
     //atualizar o pedido a partir do storage
     pedido.readFromStorage();
+    console.log(pedido);
     //ir no modelo de categorias para pegar o objeto 
     //correspondente ao código da categoria
     let selectedCat = categories.list(shortName);

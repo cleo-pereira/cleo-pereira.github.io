@@ -371,5 +371,13 @@ h3.menu-item-title {
   }
 }
 
+#pedidoList{
+  background-color: rgb(181, 34, 89);
+  list-style: none;
+  border-radius: 6px;
+}
 
-
+.btn.excluir{
+  background-color: rgb(97, 18, 47);
+  border: solid rgb(181, 34, 89);
+}
