@@ -1,0 +1,106 @@
+body {
+    width: auto;
+    margin: 0 auto;
+    position: relative;
+    border: 25px solid rgb(210, 161, 38);
+    padding: 3%;
+    min-height: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aliceblue;
+}
+
+.seta {
+    position: absolute;
+    top: 1.5%;
+    left: -15px;
+    width: 40px;
+    height: 100px;
+    background: #222;
+    clip-path: polygon(0 0, 28px 0, 40px 50px, 28px 100px, 0 100px);
+    border-radius: 10px;
+}
+
+#dados {
+    height: auto;
+    padding-left: 2%;
+    display: block;
+    margin-bottom: 1%;
+}
+
+h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 1%;
+}
+
+h3.titulo {
+    border-top: 3px solid black;
+    border-bottom: 1.5px solid black;
+    padding: 3.5px;
+    font-size: 18px;
+    margin: 0;
+}
+
+h4 {
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 2%;
+}
+
+h5 {
+    margin: 10px;
+    font-size: 12px;
+    color: #414141;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#dados {
+    position: relative;
+    overflow-wrap: anywhere;
+}
+
+#nomecargo {
+    text-align: center;
+}
+
+#info {
+    display: flex;
+    text-align: center;
+}
+
+ul {
+    list-style-type: square;
+    margin: 1%;
+}
+
+ul li::marker {
+    color: goldenrod;
+}
+
+p.instituto {
+    margin-bottom: 0;
+}
+
+p.periodo {
+    margin-top: 0;
+    font-size: 14px;
+}
+
+p {
+    margin: 1%;
+}
+
+.sigla {
+    font-style: italic;
+    font-size: smaller;
+    margin-bottom: 1%;
+}
+
+#clique {
+    display: none;
+}

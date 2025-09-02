@@ -1,0 +1,198 @@
+html {
+    background-color: #bdbdbd;
+}
+
+body {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    position: relative;
+    border: 25px solid rgb(210, 161, 38);
+    border-radius: 5%;
+    padding: 3%;
+    min-height: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aliceblue;
+}
+
+.seta {
+    position: absolute;
+    top: 50px;
+    left: -15px;
+    width: 40px;
+    height: 100px;
+    background: #222;
+    clip-path: polygon(0 0, 70% 0, 100% 50%, 70% 100%, 0 100%);
+    border-radius: 10px;
+}
+
+#dados {
+    height: auto;
+    padding-left: 2%;
+    display: flex;
+    margin-bottom: 1%;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 1%;
+}
+
+h3.titulo {
+    border-top: 3px solid black;
+    border-bottom: 1.5px solid black;
+    padding: 3.5px;
+    font-size: 23px;
+    margin: 0;
+}
+
+h4 {
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 5px;
+}
+
+h5 {
+    margin: 10px;
+    font-size: 12px;
+    color: #414141;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#nomecargo {
+    width: 80%;
+}
+
+#info {
+    margin-right: 14%;
+    margin-top: 5%;
+}
+
+#curriculo {
+    display: flex;
+    margin-top: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#principal {
+    border-right: 3px goldenrod solid;
+    padding-right: 2%;
+    width: 70%;
+    text-align: justify;
+}
+
+#extra {
+    margin-left: 1.5%;
+    width: 30%;
+}
+
+p.prefeitura {
+    margin-top: 5px;
+    margin-bottom: 1.5px;
+}
+
+#estagio {
+    margin: 8px;
+}
+
+li {
+    margin: 5px;
+    margin-top: 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+p {
+    font-size: 17px;
+}
+
+p.instituto {
+    margin-bottom: 0;
+}
+
+.periodo {
+    margin-top: 0;
+    font-size: 14px;
+}
+
+dl {
+    margin-top: 5px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li::marker {
+    content: "\25A0";
+    font-size: 7px;
+    color: goldenrod;
+    position: absolute;
+    left: 0;
+}
+
+a {
+    color: black;
+}
+
+#clique {
+    background-color: rgb(210, 161, 38);
+    color: black;
+    position: absolute;
+    z-index: 2;
+    border-radius: 5px;
+    padding: 2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    display: none;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:hover~#clique {
+    display: block;
+}
+
+#lista {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* duas colunas */
+    gap: 5px 24px;
+    /* espaço entre linhas e colunas */
+    list-style: none;
+    padding: 0;
+}
+
+#lista li {
+    position: relative;
+}
+
+.sigla {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 1%;
+    min-width: 250px;
+    font-size: small;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+}
+
+span:hover+.sigla {
+    display: block;
+    margin-top: 6px;
+}
