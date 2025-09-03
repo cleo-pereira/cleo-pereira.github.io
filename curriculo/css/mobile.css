@@ -9,6 +9,12 @@ body {
     background-color: aliceblue;
 }
 
+#curriculo {
+    display: block;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
 .seta {
     position: absolute;
     top: 1.5%;
@@ -103,4 +109,5 @@ p {
 
 #clique {
     display: none;
+
 }
