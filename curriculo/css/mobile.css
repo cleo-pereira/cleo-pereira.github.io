@@ -84,7 +84,7 @@ h5 {
     border-right: 0px goldenrod solid;
     padding-right: 2%;
     width: 100%;
-    text-align: justify;
+    text-align: left;
 }
 
 #extra {
@@ -160,3 +160,4 @@ ul li {
 #clique {
     display: none;
 }
+
